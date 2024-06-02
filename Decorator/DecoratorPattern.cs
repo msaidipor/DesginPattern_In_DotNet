@@ -43,7 +43,7 @@ namespace Decorator
         {
             if (_room != null)
               return  _room.GetDescription();
-            else return "oioi";
+            else return "";
         }
 
         public virtual int GetPrice()
