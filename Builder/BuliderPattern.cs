@@ -6,21 +6,11 @@ using System.Threading.Tasks;
 
 namespace Builder
 {
-   
-    /// <summary>
-    /// Director
-    /// </summary>
-    public class QueryMaker
-    {
-
-    }
-
     /// <summary>
     /// abstract builder
     /// </summary>
     public  abstract class QueryBuilder
     {
-       
         public Query query { get; private set; }
 
         protected QueryBuilder( )
@@ -43,15 +33,11 @@ namespace Builder
 
     }
 
-
-
     /// <summary>
     /// ConcreteBuilder
     /// </summary>
     public class SqlServerQuery : QueryBuilder
     {
-       
-
         public override QueryBuilder Table(string table)
         {
             query.Table=table;
@@ -76,8 +62,6 @@ namespace Builder
             return this;
         }
 
-      
-
         public override QueryBuilder Take(int count)
         {
             query.Take = count;
@@ -92,8 +76,6 @@ namespace Builder
 
     public class MongoDbQuery : QueryBuilder
     {
-
-
         public override QueryBuilder Table(string table)
         {
             query.Table = table;
@@ -132,9 +114,6 @@ namespace Builder
         }
     }
 
-
-
-
     /// <summary>
     /// Product
     /// </summary>
@@ -147,13 +126,6 @@ namespace Builder
         public int Skip { get; set; }
         public string Select { get; set; }
 
-
-       
-
     }
 
-
-    #region Enum
-    
-    #endregion
 }
